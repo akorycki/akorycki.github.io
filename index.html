@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Korycki</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        header {
+            background-color: #3b7ed6;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #306cbb;
+        }
+        nav a {
+            color: #fff;
+            padding: 1rem;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #3b7ed6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #fff;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .home-img {
+            max-width: 500px; /* Set the max width to 200px */
+            height: auto;
+            float: right; /* Align the image to the right */
+            margin-left: 1.5rem; /* Add some space to the right of the image */
+        }
+        .google-scholar-icon {
+            width: 20px; /* Set the width of the icon */
+            height: auto;
+            vertical-align: middle; /* Align the icon with the text */
+            margin-left: 0.5rem; /* Add some space to the left of the icon */
+        }
+        .github-icon {
+            width: 20px; /* Set the width of the icon */
+            height: auto;
+            vertical-align: middle; /* Align the icon with the text */
+            margin-left: 0.5rem; /* Add some space to the left of the icon */
+        }
+        .personal-imgs_1 {
+            max-width: 800px; /* Set maximum width for the image */
+            height: auto;   /* Maintain aspect ratio */
+            display: block; /* Make the image a block-level element */
+            margin: 0 auto; /* Center it horizontally */
+        }
+
+    </style>
+    <script>
+        function showTab(tabId) {
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Adam Korycki</h1>
+</header>
+
+<nav>
+    <a href="javascript:void(0)" onclick="showTab('home')">Home</a>
+    <a href="javascript:void(0)" onclick="showTab('research')">Research</a>
+    <a href="javascript:void(0)" onclick="showTab('personal')">Personal</a>
+</nav>
+
+<div class="container">
+    <div id="home" class="tab-content active">
+        <h2>Hello!</h2>
+        <img src="me.png" alt="Home Image" class="home-img">
+        <p>Welcome to my website! Here you can find information about my research and personal endeavors.
+           I am a researcher in applied robotics working with Professor <a href="https://people.ucsc.edu/~cojoseph/" target="_blank">Colleen Josephson</a> at UC Santa Cruz.
+           I received my M.S. in Electrical and Computer Engineering in 2024 at UC Santa Cruz, where I was advised by <a href="https://scholar.google.com/citations?user=S0mtu7oAAAAJ&hl=en" target="_blank">Steve McGuire</a>
+           and Colleen Josephson. My work involved designing a quadruped robot system to create highly accurate 3D reconstructions of redwood forests and estimate tree diameters using a novel 
+           neural vision technique. My research interests are in sustainable robot applications for smart farming and precision agriculture. I am also interested in the intersection of 
+           computer vision, SLAM, and deep learning. Outside of work, I am an adventure seeker at heart, finding joy on cliff sides and mountains. I also love to spend time playing guitar with friends.
+        </p>
+        <p> <img src="google_scholar_icon.png" alt="Google Scholar Icon" class="google-scholar-icon">
+            <a href="https://scholar.google.com/citations?user=Rn-XBRQAAAAJ&hl=en&authuser=1&oi=ao" target="_blank">Google Scholar</a>
+        </p>
+        <p> <img src="github_icon.png" alt="Github Icon" class="github-icon">
+            <a href="https://github.com/akorycki" target="_blank">Github</a>
+        </p>
+    </div>
+    <div id="research" class="tab-content">
+        <h2>Papers</h2>
+        <p><a href="https://escholarship.org/uc/item/9fd18430" target="_blank">Tree Localization and Diameter Estimation in Coastal Redwood Forests using Neural Radiance Fields</a></p>
+        <p><em>A. Korycki</em>, Masters Thesis</p>
+        <p><em>Precise ecological assessment of forest environments relies on acquiring dense, accurate spatial reconstructions. 
+            
+            Point clouds serve as the leading form of three-dimensional (3D) forest representation and have been successfully used to recover important structural parameters of trees, namely diameter at breast height (DBH).
+            
+            Point cloud generation has traditionally relied on photogrammetric or Light Detection and Ranging (LiDAR) sensing modalities. 
+            
+            Neural Radiance Fields (NeRFs), a recent innovation in artificial intelligence and computer vision, enable point cloud generation from a neural network trained on a sparse set of 2D images.
+            
+            This thesis presents an evaluation of three point cloud generation methods for the purpose of tree localization and DBH estimation in a coastal redwood forest.
+            
+            The first method uses lidar-inertial Simultaneous Localization and Mapping (SLAM) and serves as the state-of-the-art comparison.
+            
+            The two remaining methods generate neural-implicit scene geometry by training a NeRF on visual and SLAM data sourced from mobile phone and robot platforms.
+            
+            The results present an exciting avenue for rapid ecological assessment of forest environments using community-sourced mobile phone imagery as an alternative to expensive lidar sensing.</em></p>
+
+        <p><a href="https://arxiv.org/abs/2407.11238" target="_blank">Evaluating geometric accuracy of NeRF reconstructions compared to SLAM method</a></p>
+        <p><em>A. Korycki, C. Josephson, S. McGuire</em>, Arxiv preprint</p>
+        <p><em>
+            As Neural Radiance Field (NeRF) implementations become faster, more efficient and accurate, their applicability to real world mapping tasks becomes more accessible.
+            
+            Traditionally, 3D mapping, or scene reconstruction, has relied on expensive LiDAR sensing. 
+            
+            Photogrammetry can perform image-based 3D reconstruction but is computationally expensive and requires extremely dense image representation to recover complex geometry and photorealism.
+            
+            NeRFs perform 3D scene reconstruction by training a neural network on sparse image and pose data, achieving superior results to photogrammetry with less input data.
+            
+            This paper presents an evaluation of two NeRF scene reconstructions for the purpose of estimating the diameter of a vertical PVC cylinder. One of these is trained on commodity iPhone data and the other is trained on robot-sourced imagery and poses.
+            
+            This neural-geometry is compared to state-of-the-art lidar-inertial SLAM in terms of scene noise and metric accuracy.</em></p>
+
+    </div>
+    <div id="personal" class="tab-content">
+        <h2>El Potrero Chico, Mexico</h2>
+        <img src="western_epc.png" alt="epc1" class="personal-imgs_1">
+        <img src="el_toro.png" alt="epc2" class="personal-imgs_1">
+        <img src="twz.png" alt="epc3" class="personal-imgs_1">
+        <img src="twz_summit.png" alt="epc4" class="personal-imgs_1">
+        <img src="me_huff.png" alt="epc1" class="personal-imgs_1">
+        <img src="joe.png" alt="epc1" class="personal-imgs_1">
+        <h2>High Sierra, California</h2>
+        <img src="BCS.png" alt="epc1" class="personal-imgs_1">
+        <img src="spire.png" alt="epc1" class="personal-imgs_1">
+        <img src="wall.png" alt="epc1" class="personal-imgs_1">
+        <img src="fins.png" alt="epc1" class="personal-imgs_1">
+        <img src="summit_block.png" alt="epc1" class="personal-imgs_1">
+        <img src="bcs_summit.png" alt="epc1" class="personal-imgs_1">
+        <img src="laurel_mtn.png" alt="epc1" class="personal-imgs_1">
+        <img src="snow_tunnel1.png" alt="epc1" class="personal-imgs_1">
+        <img src="snow_bridge.png" alt="epc1" class="personal-imgs_1">
+        <img src="slab.png" alt="epc1" class="personal-imgs_1">
+        <img src="laurel_summit.png" alt="epc1" class="personal-imgs_1">
+
+    </div>
+</div>
+
+</body>
+</html>
